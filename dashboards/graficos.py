@@ -1,7 +1,7 @@
 import polars as pl
 import mysql.connector
 
-# Conectando ao OLTP
+
 conn = mysql.connector.connect(
     host="127.0.0.1",
     user="root",
