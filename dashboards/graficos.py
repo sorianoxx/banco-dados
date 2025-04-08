@@ -9,7 +9,7 @@ conn = mysql.connector.connect(
     database="comex"
 )
 
-# Query completa de extração
+
 query = """
 SELECT 
     t.id AS transacao_id,
@@ -28,8 +28,8 @@ FROM transacoes t
 JOIN cambios c ON t.cambio_id = c.id;
 """
 
-# Lendo os dados com Polars (via fetchall temporariamente)
-import pandas as pd  # apenas para fetch, pois polars não lê direto via mysql.connector
+
+import pandas as pd  
 cursor = conn.cursor()
 cursor.execute(query)
 columns = [desc[0] for desc in cursor.description]
@@ -37,5 +37,5 @@ rows = cursor.fetchall()
 cursor.close()
 conn.close()
 
-# Convertendo para DataFrame Polars
+
 df = pl.DataFrame(data=rows, schema=columns)
