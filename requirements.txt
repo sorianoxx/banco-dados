@@ -1,0 +1,9 @@
+apache-beam==2.50.0
+matplotlib==3.8.2
+seaborn==0.13.1
+plotly==5.18.0
+sqlalchemy==2.0.25
+pandas==2.1.4
+requests==2.31.0
+mysql-connector-python==8.2.0  # For MySQL connection
+python-dotenv==1.0.1  # For environment variables
